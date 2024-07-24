@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Secure Score API
+  description: Fetch secure score details for a tenant
+  version: 1.0
+servers:
+  - url: https://graph.microsoft.com/beta
+paths:
+  /security/secureScores:
+    description: Get top secureScores from Defender for cloud using Microsoft Graph API.
+    get:
+      summary: Get secure score details
+      operationId: getsecureScores
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecureScoreCollection'
+               
+components:
+  schemas:
+    SecureScoreCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecureScore'
+    SecureScore:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the secure score.
+        category:
+          type: string
+          description: The category of the secure score (e.g., Identity, Data, etc.).
+        score:
+          type: integer
+          description: The numeric value of the secure score.
+        severity:
+          type: string
+          description: The severity level (e.g., Low, Medium, High).
+        controls:
+          type: array
+          items: 
+            $ref: '#/components/schemas/SecureScoreControl'
