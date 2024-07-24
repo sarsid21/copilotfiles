@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Graph Secure Score API
+  version: 1.0
+servers:
+  - url: https://graph.microsoft.com/beta
+paths:
+  /security/secureScores:
+    get:
+      summary: Get secure score details
+      description: Retrieves the secure score details for a specific tenant.
+      parameters:
+        - name: tenantId
+          in: query
+          description: The ID of the tenant.
+          required: true
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: The size category of the tenant (e.g., small, medium, large).
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  currentScore:
+                    type: number
+                    description: The current secure score of the tenant.
+                  averageScore:
+                    type: number
+                    description: The average secure score of tenants of similar size.
