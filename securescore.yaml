@@ -1,0 +1,49 @@
+openapi: 3.0.1
+info:
+  title: Microsoft Secure Score API
+  description: Fetch secure score details for a tenant
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com
+paths:
+  "/v1.0/security/secureScores":
+    description: Get top secureScores from Defender for cloud using Microsoft Graph API.
+    get:
+      summary: Get secure score details
+      operationId: Get.v1.0.security.secureScores
+      parameters:
+        - name: "$filter"
+          in: query
+          description: Filter expression to select specific tenants (e.g., by size)
+          schema:
+            type: string
+        - name: "$top"
+          in: query
+          description: Number of tenants to include in the average comparison
+          schema:
+            type: integer
+        - name: sec-ch-ua-platform-version
+          in: header
+          schema:
+            type: string
+        - name: X-Edge-Shopping-Flag
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  currentScore:
+                    type: integer
+                    description: Secure score of the tenant
+                  averageComparativeScore:
+                    type: integer
+                    description: Average comparative score of tenants of similar size
+x-ms-generated-by:
+  toolName: Dev Proxy
+  toolVersion: 0.14.1
