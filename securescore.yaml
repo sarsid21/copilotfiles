@@ -1,23 +1,23 @@
-openapi: 3.0.1
+openapi: 3.0.0
 info:
   title: Microsoft Secure Score API
   description: Fetch secure score details for a tenant
-  version: v1.0
+  version: 1.0
 servers:
-  - url: https://graph.microsoft.com
+  - url: https://graph.microsoft.com/v1.0
 paths:
-  "/v1.0/security/secureScores":
+  /security/secureScores/:
     description: Get top secureScores from Defender for cloud using Microsoft Graph API.
     get:
       summary: Get secure score details
       operationId: Get.v1.0.security.secureScores
       parameters:
-        - name: "$filter"
+        - name: $filter
           in: query
           description: Filter expression to select specific tenants (e.g., by size)
           schema:
             type: string
-        - name: "$top"
+        - name: $top
           in: query
           description: Number of tenants to include in the average comparison
           schema:
