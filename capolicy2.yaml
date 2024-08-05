@@ -24,10 +24,6 @@ paths:
                   $ref: '#/components/schemas/ConditionalAccessPolicies'
 components:
   schemas:
-  AccessPolicyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConditionalAccessPolicies'
     ConditionalAccessPolicy:
       type: object
       properties:
@@ -49,4 +45,6 @@ components:
         sessionControls:
           type: object
           decsription: The session controls that apply when policy is enforced
-      
+        users:
+          type: object
+          decsription: The users to which the policy applies and the ones that are out of scope
