@@ -3,36 +3,53 @@ info:
   title: Microsoft Graph Secure Score API
   version: 1.0
 servers:
-  - url: https://graph.microsoft.com/beta
+  - url: https://graph.microsoft.com/v1.0
 paths:
   /security/secureScores:
     get:
       summary: Get secure score details
       description: Retrieves the secure score details for a specific tenant.
-      parameters:
-        - name: tenantId
-          in: query
-          description: The ID of the tenant.
-          required: true
-          schema:
-            type: string
-        - name: size
-          in: query
-          description: The size category of the tenant (e.g., small, medium, large).
-          required: true
-          schema:
-            type: string
+      operationId: getsecureScores
       responses:
         '200':
           description: Successful response
+          tags: 
+            - Secure Scores
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  currentScore:
-                    type: number
-                    description: The current secure score of the tenant.
-                  averageScore:
-                    type: number
-                    description: The average secure score of tenants of similar size.
+                $ref: '#/components/schemas/SecureScoreCollection'
+              
+components:
+  schemas:
+    SecureScoreCollection:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecureScore'
+    SecureScore:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the secure score.
+        enabledServices:
+          type: object
+          description: The services / licenses enabled in the tenant (e.g., Identity, Data, etc.).
+        currentScore:
+          type: integer
+          description: The numeric value of the current secure score.
+        maxScore:
+          type: integer
+          description: The numeric value of the current secure score.
+        createdDateTime:
+          type: string
+          description: The time when secure score was created.
+        avergaeComparativeScores:
+          type: object
+          description: The standing as compared to other tenants.
+        controlScores:
+          type: object
+          description: The status of scores under each controls
