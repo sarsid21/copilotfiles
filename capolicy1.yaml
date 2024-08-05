@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Graph CA policy API
+  description: Fetch conditional access policy details for a tenant
+  version: 1.0.0
+servers:
+  - url: https://graph.microsoft.com/v1.0
+paths:
+  /identity/conditionalAccess/policies:
+    description: Get CA policy details using Microsoft Graph API.
+    get:
+      summary: List all CA policies
+      operationId: getConditionalAccessPolicies
+      tags:
+        - Conditional Access
+      responses:
+        '200':
+          description: A list of access packages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConditionalAccessPolicies'
+components:
+  schemas:
+    ConditionalAccessPolicy:
+      type: object
+      properties:
+        id:
+          type: string
+          decsription: Unique identifier of the policy
+        displayName:
+          type: string
+          decsription: Display name of the policy
+        state:
+          type: string
+          decsription: The state of the policy
+        conditions:
+          type: object
+          decsription: conditions under which policy applies
+        grantControls:
+          type: object
+          decsription: The grant controls that must be satisfied to apply the policy
+        sessionControls:
+          type: object
+          decsription: The session controls that apply when policy is enforced
+      
