@@ -21,7 +21,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ConditionalAccessPolicies'
+                  $ref: '#/components/schemas/ConditionalAccessPolicy'
 components:
   schemas:
     ConditionalAccessPolicy:
