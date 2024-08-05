@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Graph EM API
+  description: Fetch access package details for a tenant
+  version: 1.0.0
+servers:
+  - url: https://graph.microsoft.com/v1.0
+paths:
+  /identityGovernance/entitlementManagement/accessPackages:
+    description: Get EM package details using Microsoft Graph API.
+    get:
+      summary: List all access packages
+      operationId: listAccessPackages
+      tags:
+        - Access Package
+      responses:
+        '200':
+          description: A list of access packages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessPackageList'
+components:
+  schemas:
+    AccessPackageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessPackageList'
+    AccessPackage:
+      type: object
+      properties:
+        id:
+          type: string
+          decsription: Unique identifier of the access package
+        displayName:
+          type: string
+          decsription: Display name of the access package
+        description:
+          type: string
+          decsription: Description of the access package
+        isHidden:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        catalogId:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+      
