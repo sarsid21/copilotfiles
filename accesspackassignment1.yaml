@@ -4,8 +4,8 @@ info:
   description: API to retrieve details of access package assignments, including user information and relationships with accessPackage, target, and assignmentPolicy.
   version: 1.0.0
 servers:
-  - url: https://api.example.com/v1
-    description: Main API server
+  - url: https://graph.microsoft.com/v1
+    description: Graph API to get access assignments
 
 paths:
   /accessPackageAssignments:
