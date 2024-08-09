@@ -43,13 +43,13 @@ components:
           type: string
           decsription: Description of the access package
         detectorId:
-          type: boolean
+          type: string
           decsription: Indicates if the package is hidden
         title:
           type: string
           decsription: Identifier of the catalog containing the Access Package
         assignedTo:
-          type: boolean
+          type: string
           decsription: Indicates if the package is hidden
         alertWebUrl:
           type: string
@@ -58,7 +58,7 @@ components:
           type: string
           decsription: Description of the access package
         actorDisplayName:
-          type: boolean
+          type: string
           decsription: Indicates if the package is hidden
        	threatFamilyName:
 	  type: string
@@ -73,7 +73,7 @@ components:
           type: string
           decsription: Description of the access package
         resolvedDateTime:
-          type: boolean
+          type: DateTimeOffset
           decsription: Indicates if the package is hidden
         firstActivityDateTime:
           type: string
