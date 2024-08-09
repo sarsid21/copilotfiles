@@ -8,7 +8,7 @@ servers:
     description: Graph API to get access assignments
 
 paths:
-  /accessPackageAssignments:
+  /identityGovernance/entitlementManagement/assignments:
     get:
       summary: Get access package assignments
       description: Retrieve details of access package assignments, including user information and relationships.
