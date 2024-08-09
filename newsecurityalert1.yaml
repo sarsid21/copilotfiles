@@ -55,7 +55,7 @@ components:
           type: string
           decsription: Identifier of the catalog containing the Access Package
         incidentWebUrl:
-          type: string
+	  type: string
           decsription: Description of the access package
 	actorDisplayName:
           type: string
