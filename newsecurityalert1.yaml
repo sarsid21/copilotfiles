@@ -50,9 +50,6 @@ components:
         classification:
           type: boolean
           decsription: Indicates if the package is hidden
-        determination:
-	  type: string
-          decsription: Identifier of the catalog containing the Access Package
         serviceSource:
 	  type: string
           decsription: Unique identifier of the access package
