@@ -43,7 +43,7 @@ components:
           type: boolean
           decsription: Indicates if the package is hidden
         serviceSource:
-	  type: string
+	  type: microsoft.graph.security.alertSeverity
           decsription: Unique identifier of the access package
         detectionSource:
           type: string
