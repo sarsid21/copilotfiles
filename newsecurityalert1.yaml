@@ -57,10 +57,10 @@ components:
         incidentWebUrl:
           type: string
           decsription: Description of the access package
-        actorDisplayName:
-          type: object
+	actorDisplayName:
+          type: string
           decsription: Indicates if the package is hidden
-       	threatFamilyName:
+        threatFamilyName:
 	  type: string
           decsription: Unique identifier of the access package
         category:
@@ -79,7 +79,7 @@ components:
           type: string
           decsription: Identifier of the catalog containing the Access Package
         lastActivityDateTime:
-	  type: string
+          type: string
           decsription: Unique identifier of the access package
         systemTags:
           type: string
@@ -87,7 +87,7 @@ components:
         alertPolicyId:
           type: string
           decsription: Description of the access package
-	evidence:
+        evidence:
           type: object
           decsription: Identifier of the catalog containing the Access Package
       
