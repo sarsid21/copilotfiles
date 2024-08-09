@@ -60,9 +60,6 @@ components:
         actorDisplayName:
           type: string
           decsription: Indicates if the package is hidden
-        category:
-          type: string
-          decsription: Description of the access package
         mitreTechniques:
           type: string
           decsription: Display name of the access package
