@@ -63,7 +63,7 @@ components:
         actorDisplayName:
           type: boolean
           decsription: Indicates if the package is hidden
-        threatDisplayName:
+	threatDisplayName:
 	  type: string
           decsription: Identifier of the catalog containing the Access Package
 	threatFamilyName:
