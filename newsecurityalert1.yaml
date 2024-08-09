@@ -30,11 +30,6 @@ paths:
                         application/json:
 
 components:
-  schemas:
-    AccessPackageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccessPackageList'
     AccessPackage:
       type: object
       properties:
