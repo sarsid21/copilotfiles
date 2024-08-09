@@ -1,0 +1,128 @@
+openapi: 3.0.0
+
+info:
+    title: Defender Specific Alert Details Plugin
+    description: Skills for getting alert details via Graph API Call
+    version: "v1"
+
+servers:
+    - url: https://graph.microsoft.com/v1.0/security
+
+paths:
+    /alerts_v2:
+        get:
+            operationId: GetAlertIdsFromIncidentId
+            description: List all alert id's based on a user provided incident id
+            ExamplePrompt:
+              - 'show me alert ids for the specified incident id'
+              - 'Get me all alert ids where incident id is provided'
+            #parameters:
+             #   - in: query
+              #    name: $filter
+               #   schema:
+                #      type: string
+                 # required: true
+                  #description: A filter in the format of "incidentid eq id" where ID is an incident ID provided by the user.
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+
+components:
+  schemas:
+    AccessPackageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccessPackageList'
+    AccessPackage:
+      type: object
+      properties:
+        id:
+          type: string
+          decsription: Unique identifier of the access package
+        incidentId:
+          type: string
+          decsription: Display name of the access package
+        status:
+          type: string
+          decsription: Description of the access package
+        classification:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        determination:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+	serviceSource:
+	  type: string
+          decsription: Unique identifier of the access package
+        detectionSource:
+          type: string
+          decsription: Display name of the access package
+        productName:
+          type: string
+          decsription: Description of the access package
+        detectorId:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        title:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+        recommendedActions:
+	  type: string
+          decsription: Unique identifier of the access package
+        description:
+          type: string
+          decsription: Display name of the access package
+        category:
+          type: string
+          decsription: Description of the access package
+        assignedTo:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        alertWebUrl:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+        incidentWebUrl:
+          type: string
+          decsription: Description of the access package
+        actorDisplayName:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        threatDisplayName:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+	threatFamilyName:
+	  type: string
+          decsription: Unique identifier of the access package
+        mitreTechniques:
+          type: string
+          decsription: Display name of the access package
+        lastUpdateDateTime:
+          type: string
+          decsription: Description of the access package
+        resolvedDateTime:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        firstActivityDateTime:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+        lastActivityDateTime:
+	  type: string
+          decsription: Unique identifier of the access package
+        systemTags:
+          type: string
+          decsription: Display name of the access package
+        alertPolicyId:
+          type: string
+          decsription: Description of the access package
+        additionalData:
+          type: boolean
+          decsription: Indicates if the package is hidden
+        comments:
+          type: string
+          decsription: Identifier of the catalog containing the Access Package
+	evidence:
+          type: object
+          decsription: Identifier of the catalog containing the Access Package
+      
