@@ -42,9 +42,6 @@ components:
         classification:
           type: boolean
           decsription: Indicates if the package is hidden
-        serviceSource:
-	  type: microsoft.graph.security.alertSeverity
-          decsription: Unique identifier of the access package
         detectionSource:
           type: string
           decsription: Display name of the access package
