@@ -49,7 +49,7 @@ components:
           type: string
           decsription: Identifier of the catalog containing the Access Package
         recommendedActions:
-	  type: string
+	  type: object
           decsription: Unique identifier of the access package
         description:
           type: string
