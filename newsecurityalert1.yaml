@@ -30,9 +30,6 @@ paths:
                         application/json:
 
 components:
-    AccessPackage:
-      type: object
-      properties:
         id:
           type: string
           decsription: Unique identifier of the access package
