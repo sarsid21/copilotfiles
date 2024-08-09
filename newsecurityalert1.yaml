@@ -37,14 +37,8 @@ components:
           type: string
           decsription: Display name of the access package
         status:
-          type: string
+          type: object
           decsription: Description of the access package
-        classification:
-          type: boolean
-          decsription: Indicates if the package is hidden
-        detectionSource:
-          type: string
-          decsription: Display name of the access package
         productName:
           type: string
           decsription: Description of the access package
@@ -102,12 +96,6 @@ components:
         alertPolicyId:
           type: string
           decsription: Description of the access package
-        additionalData:
-          type: boolean
-          decsription: Indicates if the package is hidden
-        comments:
-          type: string
-          decsription: Identifier of the catalog containing the Access Package
 	evidence:
           type: object
           decsription: Identifier of the catalog containing the Access Package
