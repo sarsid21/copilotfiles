@@ -4,7 +4,7 @@ info:
   description: API to retrieve details of access package assignments, including user information and relationships with accessPackage, target, and assignmentPolicy.
   version: 1.0.0
 servers:
-  - url: https://graph.microsoft.com/v1
+  - url: https://graph.microsoft.com/v1.0
     description: Graph API to get access assignments
 
 paths:
