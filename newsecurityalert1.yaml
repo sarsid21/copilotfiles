@@ -58,7 +58,7 @@ components:
           type: string
           decsription: Description of the access package
         actorDisplayName:
-          type: string
+          type: object
           decsription: Indicates if the package is hidden
        	threatFamilyName:
 	  type: string
