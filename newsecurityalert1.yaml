@@ -60,9 +60,6 @@ components:
         actorDisplayName:
           type: string
           decsription: Indicates if the package is hidden
-        lastUpdateDateTime:
-          type: string
-          decsription: Description of the access package
         resolvedDateTime:
           type: DateTimeOffset
           decsription: Indicates if the package is hidden
