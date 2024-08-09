@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 info:
-    title: Defender Specific Alert Details Plugin
+    title: testing new security alerts
     description: Skills for getting alert details via Graph API Call
     version: "v1"
 
