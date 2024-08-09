@@ -48,8 +48,9 @@ components:
         title:
           type: string
           decsription: Identifier of the catalog containing the Access Package
-       description:
+	description:
           type: string
+	  description: Identifier of the catalog containing the Access Package
         category:
           type: string
           decsription: Description of the access package
