@@ -3,10 +3,10 @@ info:
   title: Saviynt Enterprise Identity Cloud API
   version: 1.0.0
 servers:
-  - url: https://wipro-partner.saviyntcloud.com/ECM/api/v5
+  - url: https://wipro-partner.saviyntcloud.com
     description: Production server
 paths:
-  /getuser/
+  /ECM/api/v5/getuser/
     get:
       summary: Get user details
       description: Retrieve user information by ID
@@ -24,7 +24,7 @@ paths:
               schema:
                 type: array
                
-  /getEntitlements:
+  /ECM/api/v5/getEntitlements:
     get:
       summary: Get user entitlements
       description: Retrieve entitlements for a user
