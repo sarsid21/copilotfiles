@@ -2,16 +2,18 @@ openapi: 3.0.0
 info:
   title: Saviynt Enterprise Identity Cloud API
   version: 1.0.0
+
 servers:
-  - url: https://wipro-partner.saviyntcloud.com
+  - url: https://wipro-partner.saviyntcloud.com/ECM/api/v5
     description: Production server
+
 paths:
-  /ECM/api/v5/getuser/
+  /getuser/:
     get:
       summary: Get user details
       description: Retrieve user information by ID
       parameters:
-        - name: userId
+        - name: username
           in: path
           required: true
           schema:
@@ -22,22 +24,14 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-               
-  /ECM/api/v5/getEntitlements:
-    get:
-      summary: Get user entitlements
-      description: Retrieve entitlements for a user
-      parameters:
-        - name: userId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: array
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    description: the unique identifier of the user
+                  email:
+                    type: string
+                    description: the email of the user
+                  role:
+                    type: string
+                    description: the user's role or access level
