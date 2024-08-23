@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Saviynt Enterprise Identity Cloud API
+  version: 1.0.0
+
+paths:
+  /getuser/:
+    get:
+      summary: Get user details
+      description: Retrieve user information by ID
+      
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    description: the unique identifier of the user
+                  email:
+                    type: string
+                    description: the email of the user
+                  role:
+                    type: string
+                    description: the user's role or access level
